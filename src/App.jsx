@@ -8,18 +8,11 @@ import PlayerDetails from './components/PlayerDetails'
 export default function App() {
   return (
     <>
-      <header>
-        <h1>
-          <a href="/">Audubon Society</a>
-        </h1>
-      </header>
-      <main>
   <Routes>
     <Route path="/" element={ <Title /> } />
     <Route path="/team" element={ <TeamRoster /> } />
     <Route path="/details/:id" element={ <PlayerDetails />} />
   </Routes>
-</main>
     </>
   );
 }
