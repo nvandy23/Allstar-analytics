@@ -1,16 +1,17 @@
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+//import { Link } from "react-router-dom";
+//import { useNavigate } from 'react-router-dom'
+import TeamRoster from "./TeamRoster"; 
 
-
-export default function TeamDetails () {
+const TeamDetails = () => {
   const [teamRoster, setTeamRoster] = useState([]);
   const [selectedTeam, setSelectedTeam] = useState("");
   const [selectedStartSeason, setSelectedStartSeason] = useState("");
   const [selectedEndSeason, setSelectedEndSeason] = useState("");
   const [teamId, setteamId] = useState("");
   const [teamList, setTeamList] = useState([]);
+  //const navigate =useNavigate()
 
-  // this first call is just accessing the team name and trying to attach that to the id
   const fetchTeamList = async () => {
     try {
       const url = `http://lookup-service-prod.mlb.com/json/named.team_all_season.bam?sport_code='mlb'&all_star_sw='N'&sort_order=name_asc&season='2017'`;
@@ -32,6 +33,7 @@ export default function TeamDetails () {
       const details = result?.roster_team_alltime?.queryResults?.row || [];
       setTeamRoster(details);
       console.log(details);
+      //navigate('/team')
     } catch (error) {
       console.error(error);
     }
@@ -45,7 +47,7 @@ export default function TeamDetails () {
     setSelectedTeam(e.target.value);
     const selectedTeamInfo = teamList.find(
       (team) => team.name_display_full === e.target.value
-    );
+    ); //line 47 and line 48 courtesy of: chat.openai.com it also helped with refactoring this code into arrow functions for this page.
     setteamId(selectedTeamInfo?.team_id || "");
   };
 
@@ -60,8 +62,10 @@ export default function TeamDetails () {
   const handleSubmit = async () => {
     try {
       if (selectedTeam && selectedStartSeason && selectedEndSeason) {
+        //navigate('/team')
         await fetchTeamDetails();
         console.log(selectedTeam, selectedStartSeason, selectedEndSeason, teamId);
+        //navigate('/team')
       } else {
         alert("Please select a team and enter start and end seasons");
       }
@@ -72,6 +76,7 @@ export default function TeamDetails () {
 
   return (
     <div>
+      <div>
       <div>
         <label>
           Select Team:
@@ -104,21 +109,17 @@ export default function TeamDetails () {
             onChange={handleSelectedEndSeasonChange}
           />
         </label>
+        </div>
       </div>
       <div>
         <button onClick={handleSubmit}>Submit</button>
-        <h2>Player Roster</h2>
-<ul>
-  {teamRoster.map((p) => (
-    <li key={p.player_id}>
-      {p.name_last_first} {p.primary_position}
-      <Link to={`/details/${p.player_id}`}>Player details</Link>
-    </li>
-  ))}
-</ul>
-
+        <TeamRoster teamRoster={teamRoster} />
       </div>
     </div>
   );
-}
+};
+
+export default TeamDetails;
+
+
 

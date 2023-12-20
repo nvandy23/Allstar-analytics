@@ -1,10 +1,11 @@
-import {useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom"
+const PlayerDetails = () => {
+  const { id } = useParams();
+  const [playerDetails, setPlayerDetails] = useState([]);
 
-export default function PlayerDetails() {
-const {id} =useParams()
-const [playerDetails,setPlayerDetails] = useState([])
-  async function getPlayerDetails() {
+  const getPlayerDetails = async () => {
     const url = `http://lookup-service-prod.mlb.com/json/named.player_info.bam?sport_code='mlb'&player_id=${id}`;
 
     try {
@@ -16,7 +17,7 @@ const [playerDetails,setPlayerDetails] = useState([])
     } catch (error) {
       console.error(error);
     }
-  }
+  };
 
   useEffect(() => {
     getPlayerDetails();
@@ -29,18 +30,21 @@ const [playerDetails,setPlayerDetails] = useState([])
   return (
     <div>
       <h2>Player Details</h2>
-      <p>Name:{playerDetails.name_display_first_last}</p>
-      <p>Position:{playerDetails.primary_position_txt}</p>
-      <p>Birthdate:{playerDetails.birth_date}</p>
-      <p>Pro debut:{playerDetails.pro_debut_date}</p>
+      <p>Name: {playerDetails.name_display_first_last}</p>
+      <p>Position: {playerDetails.primary_position_txt}</p>
+      <p>Birthdate: {playerDetails.birth_date}</p>
+      <p>Pro debut: {playerDetails.pro_debut_date}</p>
       <p>College: {playerDetails.college}</p>
       <p>Height: {playerDetails.height_feet} {playerDetails.height_inches}</p>
       <p>Weight: {playerDetails.weight}</p>
       <p>Bats: {playerDetails.bats}</p>
-      <p>Throws:{playerDetails.throws}</p>
+      <p>Throws: {playerDetails.throws}</p>
+      <Link to={`/details/${playerDetails.player_id}/stats`}>Player Career Stats</Link>
     </div>
   );
-  }
+};
+
+export default PlayerDetails;
   
 
 
