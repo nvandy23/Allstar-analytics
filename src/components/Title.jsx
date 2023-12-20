@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 
-const TeamDetails = () => {
+export default function TeamDetails () {
   const [teamRoster, setTeamRoster] = useState([]);
   const [selectedTeam, setSelectedTeam] = useState("");
   const [selectedStartSeason, setSelectedStartSeason] = useState("");
@@ -120,6 +120,5 @@ const TeamDetails = () => {
       </div>
     </div>
   );
-};
+}
 
-export default TeamDetails; 
