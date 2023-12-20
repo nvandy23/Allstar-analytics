@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+
 
 const TeamDetails = () => {
   const [teamRoster, setTeamRoster] = useState([]);
@@ -106,11 +108,15 @@ const TeamDetails = () => {
       <div>
         <button onClick={handleSubmit}>Submit</button>
         <h2>Player Roster</h2>
-        <ul>
-          {teamRoster.map((p) => (
-            <li key={p.player_id}>{p.name_last_first}</li>
-          ))}
-        </ul>
+<ul>
+  {teamRoster.map((p) => (
+    <li key={p.player_id}>
+      {p.name_last_first} {p.primary_position}
+      <Link to={`/details/${p.player_id}`}>Player details</Link>
+    </li>
+  ))}
+</ul>
+
       </div>
     </div>
   );
