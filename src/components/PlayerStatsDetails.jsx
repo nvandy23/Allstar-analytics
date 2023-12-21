@@ -1,33 +1,56 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 
-export default function PlayerStats() {
-  const { id } = useParams();
-  const [playerStats, setPlayerStats] = useState([]);
+const PlayerStats = ({ id, position }) => {
+  const [playerStats, setPlayerStats] = useState(null);
 
-  async function getPlayerStats() {
-    const url = `http://lookup-service-prod.mlb.com/json/named.sport_career_hitting.bam?league_list_id='mlb'&game_type='R'&player_id=${id}`;
+  const getPlayerStats = async () => {
+    const urlHitting = `http://lookup-service-prod.mlb.com/json/named.sport_career_hitting.bam?league_list_id='mlb'&game_type='R'&player_id=${id}`;
+    const urlPitching = `http://lookup-service-prod.mlb.com/json/named.sport_career_pitching.bam?league_list_id='mlb'&game_type='R'&player_id=${id}`;
+
     try {
-      const response = await fetch(url);
+      const response = await fetch(position === "P" ? urlPitching : urlHitting);
       const result = await response.json();
-      const details = result?.sport_career_hitting?.queryResults?.row || null;
+      const details = position === "P" ? result?.sport_career_pitching?.queryResults?.row : result?.sport_career_hitting?.queryResults?.row;
       setPlayerStats(details);
-      console.log(result);
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
-  }
+  };
 
   useEffect(() => {
     getPlayerStats();
-  }, []);
+  }, []); 
+
+  if (!playerStats) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div>
-      <p>{playerStats?.ab}</p>
+      {position === "P" ? (
+        <>
+          <p>Wins: {playerStats?.w}</p>
+          <p>Losses: {playerStats?.l}</p>
+          <p>ERA: {playerStats?.era}</p>
+        </>
+      ) : (
+        <>
+          <p>Abs: {playerStats?.ab}</p>
+          <p>Hits: {playerStats?.h}</p>
+          <p>Avg: {playerStats?.avg}</p>
+          <p>HR: {playerStats?.hr}</p>
+          <p>R: {playerStats?.r}</p>
+          <p>RBI: {playerStats?.rbi}</p>
+        </>
+      )}
     </div>
   );
-}
+};
+
+export default PlayerStats;
+
+
+
 
 
 

@@ -1,16 +1,16 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import TeamRoster from "./TeamRoster";
+import '../App.css';
 
-
-export default function TeamDetails () {
+const TeamDetails = () => {
   const [teamRoster, setTeamRoster] = useState([]);
   const [selectedTeam, setSelectedTeam] = useState("");
   const [selectedStartSeason, setSelectedStartSeason] = useState("");
   const [selectedEndSeason, setSelectedEndSeason] = useState("");
   const [teamId, setteamId] = useState("");
   const [teamList, setTeamList] = useState([]);
+  // const navigate = useNavigate();
 
-  // this first call is just accessing the team name and trying to attach that to the id
   const fetchTeamList = async () => {
     try {
       const url = `http://lookup-service-prod.mlb.com/json/named.team_all_season.bam?sport_code='mlb'&all_star_sw='N'&sort_order=name_asc&season='2017'`;
@@ -32,6 +32,7 @@ export default function TeamDetails () {
       const details = result?.roster_team_alltime?.queryResults?.row || [];
       setTeamRoster(details);
       console.log(details);
+      // navigate('/team')
     } catch (error) {
       console.error(error);
     }
@@ -62,6 +63,7 @@ export default function TeamDetails () {
       if (selectedTeam && selectedStartSeason && selectedEndSeason) {
         await fetchTeamDetails();
         console.log(selectedTeam, selectedStartSeason, selectedEndSeason, teamId);
+        // navigate('/team')
       } else {
         alert("Please select a team and enter start and end seasons");
       }
@@ -71,54 +73,59 @@ export default function TeamDetails () {
   };
 
   return (
-    <div>
-      <div>
-        <label>
-          Select Team:
-          <select value={selectedTeam} onChange={handleSelectedTeamChange}>
-            <option value="">Select a team</option>
-            {teamList.map((t) => (
-              <option key={t.team_id} value={t.team_id}>
-                {t.name_display_full}
-              </option>
-            ))}
-          </select>
-        </label>
-      </div>
-      <div>
-        <label>
-          Select Start Season:
-          <input
-            type="text"
-            value={selectedStartSeason}
-            onChange={handleSelectedStartSeasonChange}
-          />
-        </label>
-      </div>
-      <div>
-        <label>
-          Select End Season:
-          <input
-            type="text"
-            value={selectedEndSeason}
-            onChange={handleSelectedEndSeasonChange}
-          />
-        </label>
-      </div>
-      <div>
-        <button onClick={handleSubmit}>Submit</button>
-        <h2>Player Roster</h2>
-<ul>
-  {teamRoster.map((p) => (
-    <li key={p.player_id}>
-      {p.name_last_first} {p.primary_position}
-      <Link to={`/details/${p.player_id}`}>Player details</Link>
-    </li>
-  ))}
-</ul>
-
-      </div>
+    <div className="min-h-screen flex flex-col items-center">
+      <h1 className="text-2xl font-bold mb-4">AllStar analytics</h1>
+      {(teamRoster.length > 0) ? (
+        <div className="flex-grow">
+          <TeamRoster teamRoster={teamRoster} />
+        </div>
+      ) : (
+        <div className="flex flex-grow items-center">
+          <div className="grid grid-cols-4 gap-4 w-full">
+            <div>
+              <label>
+                Select Team:
+                <select value={selectedTeam} onChange={handleSelectedTeamChange}>
+                  <option value="">Select a team</option>
+                  {teamList.map((t) => (
+                    <option key={t.team_id} value={t.team_id}>
+                      {t.name_display_full}
+                    </option>
+                  ))}
+                </select>
+              </label>
+            </div>
+            <div>
+              <label>
+                Select Start Season:
+                <input
+                  type="text"
+                  value={selectedStartSeason}
+                  onChange={handleSelectedStartSeasonChange}
+                />
+              </label>
+            </div>
+            <div>
+              <label>
+                Select End Season:
+                <input
+                  type="text"
+                  value={selectedEndSeason}
+                  onChange={handleSelectedEndSeasonChange}
+                />
+              </label>
+            </div>
+            <div>
+              <button onClick={handleSubmit}>Submit</button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
-}
+};
+
+export default TeamDetails;
+
+
 
