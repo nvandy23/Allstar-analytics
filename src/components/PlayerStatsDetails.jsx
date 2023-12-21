@@ -26,12 +26,15 @@ const PlayerStats = ({ id, position }) => {
   }
 
   return (
-    <div>
+    <div className ='flex flex-col items-center justify-center min-h-screen'>
       {position === "P" ? (
         <>
           <p>Wins: {playerStats?.w}</p>
           <p>Losses: {playerStats?.l}</p>
           <p>ERA: {playerStats?.era}</p>
+          <p>Innings Pitched: {playerStats?.ip}</p>
+          <p>Strikeouts: {playerStats?.so}</p>
+          <p>Walks: {playerStats?.bb} </p>
         </>
       ) : (
         <>
