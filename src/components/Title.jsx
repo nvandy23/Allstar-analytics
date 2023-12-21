@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
-//import { Link } from "react-router-dom";
-//import { useNavigate } from 'react-router-dom'
-import TeamRoster from "./TeamRoster"; 
+import { useState, useEffect } from "react";
+import TeamRoster from "./TeamRoster";
+import '../App.css';
 
 const TeamDetails = () => {
   const [teamRoster, setTeamRoster] = useState([]);
@@ -10,7 +9,7 @@ const TeamDetails = () => {
   const [selectedEndSeason, setSelectedEndSeason] = useState("");
   const [teamId, setteamId] = useState("");
   const [teamList, setTeamList] = useState([]);
-  //const navigate =useNavigate()
+  // const navigate = useNavigate();
 
   const fetchTeamList = async () => {
     try {
@@ -33,7 +32,7 @@ const TeamDetails = () => {
       const details = result?.roster_team_alltime?.queryResults?.row || [];
       setTeamRoster(details);
       console.log(details);
-      //navigate('/team')
+      // navigate('/team')
     } catch (error) {
       console.error(error);
     }
@@ -47,7 +46,7 @@ const TeamDetails = () => {
     setSelectedTeam(e.target.value);
     const selectedTeamInfo = teamList.find(
       (team) => team.name_display_full === e.target.value
-    ); //line 47 and line 48 courtesy of: chat.openai.com it also helped with refactoring this code into arrow functions for this page.
+    );
     setteamId(selectedTeamInfo?.team_id || "");
   };
 
@@ -62,10 +61,9 @@ const TeamDetails = () => {
   const handleSubmit = async () => {
     try {
       if (selectedTeam && selectedStartSeason && selectedEndSeason) {
-        //navigate('/team')
         await fetchTeamDetails();
         console.log(selectedTeam, selectedStartSeason, selectedEndSeason, teamId);
-        //navigate('/team')
+        // navigate('/team')
       } else {
         alert("Please select a team and enter start and end seasons");
       }
@@ -75,46 +73,54 @@ const TeamDetails = () => {
   };
 
   return (
-    <div>
-      <div>
-      <div>
-        <label>
-          Select Team:
-          <select value={selectedTeam} onChange={handleSelectedTeamChange}>
-            <option value="">Select a team</option>
-            {teamList.map((t) => (
-              <option key={t.team_id} value={t.team_id}>
-                {t.name_display_full}
-              </option>
-            ))}
-          </select>
-        </label>
-      </div>
-      <div>
-        <label>
-          Select Start Season:
-          <input
-            type="text"
-            value={selectedStartSeason}
-            onChange={handleSelectedStartSeasonChange}
-          />
-        </label>
-      </div>
-      <div>
-        <label>
-          Select End Season:
-          <input
-            type="text"
-            value={selectedEndSeason}
-            onChange={handleSelectedEndSeasonChange}
-          />
-        </label>
+    <div className="min-h-screen flex flex-col items-center">
+      <h1 className="text-2xl font-bold mb-4">AllStar analytics</h1>
+      {(teamRoster.length > 0) ? (
+        <div className="flex-grow">
+          <TeamRoster teamRoster={teamRoster} />
         </div>
-      </div>
-      <div>
-        <button onClick={handleSubmit}>Submit</button>
-        <TeamRoster teamRoster={teamRoster} />
-      </div>
+      ) : (
+        <div className="flex flex-grow items-center">
+          <div className="grid grid-cols-4 gap-4 w-full">
+            <div>
+              <label>
+                Select Team:
+                <select value={selectedTeam} onChange={handleSelectedTeamChange}>
+                  <option value="">Select a team</option>
+                  {teamList.map((t) => (
+                    <option key={t.team_id} value={t.team_id}>
+                      {t.name_display_full}
+                    </option>
+                  ))}
+                </select>
+              </label>
+            </div>
+            <div>
+              <label>
+                Select Start Season:
+                <input
+                  type="text"
+                  value={selectedStartSeason}
+                  onChange={handleSelectedStartSeasonChange}
+                />
+              </label>
+            </div>
+            <div>
+              <label>
+                Select End Season:
+                <input
+                  type="text"
+                  value={selectedEndSeason}
+                  onChange={handleSelectedEndSeasonChange}
+                />
+              </label>
+            </div>
+            <div>
+              <button onClick={handleSubmit}>Submit</button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

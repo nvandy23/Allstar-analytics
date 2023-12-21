@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom"
+import PlayerStats from "./PlayerStatsDetails";
 const PlayerDetails = () => {
   const { id } = useParams();
-  const [playerDetails, setPlayerDetails] = useState([]);
+  const [playerDetails, setPlayerDetails] = useState(null);
 
   const getPlayerDetails = async () => {
     const url = `http://lookup-service-prod.mlb.com/json/named.player_info.bam?sport_code='mlb'&player_id=${id}`;
@@ -26,9 +26,11 @@ const PlayerDetails = () => {
   if (!playerDetails) {
     return <div>Loading...</div>;
   }
-
+  
+console.log()
   return (
-    <div>
+    <div> 
+    <nav className ='flex'>
       <h2>Player Details</h2>
       <p>Name: {playerDetails.name_display_first_last}</p>
       <p>Position: {playerDetails.primary_position_txt}</p>
@@ -39,7 +41,8 @@ const PlayerDetails = () => {
       <p>Weight: {playerDetails.weight}</p>
       <p>Bats: {playerDetails.bats}</p>
       <p>Throws: {playerDetails.throws}</p>
-      <Link to={`/details/${playerDetails.player_id}/stats`}>Player Career Stats</Link>
+      </nav>
+     <PlayerStats id = {playerDetails.player_id} position ={playerDetails.primary_position_txt}/>
     </div>
   );
 };

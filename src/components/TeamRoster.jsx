@@ -1,23 +1,27 @@
 
 import { Link } from "react-router-dom";
-
 const TeamRoster = ({ teamRoster }) => {
   return (
-    <div>
-      <h2>Team Roster</h2>
-      <ul>
-        {teamRoster?.map((p) => (
-          <li key={p.player_id}>
+    <div className="grid grid-cols-4 gap-4">
+      {teamRoster?.map((p) => (
+        <div key={p.player_id} className="bg-gray-200 p-4 flex flex-col justify-between">
+          <div>
             {p.name_last_first} - {p.primary_position}
-            <Link to={`/details/${p.player_id}`}>Player details</Link>
-          </li>
-        ))}
-      </ul>
+          </div>
+          <div>
+            <Link to={`/details/${p.player_id}/${p.primary_position}`} className="text-blue-500">
+              Player details
+            </Link>
+          </div>
+        </div>
+      ))}
     </div>
   );
 };
 
 export default TeamRoster;
+
+
 
 
 
