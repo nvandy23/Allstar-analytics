@@ -13,7 +13,7 @@ const TeamDetails = () => {
 
   const fetchTeamList = async () => {
     try {
-      const url = `http://lookup-service-prod.mlb.com/json/named.team_all_season.bam?sport_code='mlb'&all_star_sw='N'&sort_order=name_asc&season='2017'`;
+      const url = `https://lookup-service-prod.mlb.com/json/named.team_all_season.bam?sport_code='mlb'&all_star_sw='N'&sort_order=name_asc&season='2017'`;
       const response = await fetch(url);
       const result = await response.json();
       const teams = result?.team_all_season?.queryResults?.row || [];
@@ -26,7 +26,7 @@ const TeamDetails = () => {
 
   const fetchTeamDetails = async () => {
     try {
-      const url = `http://lookup-service-prod.mlb.com/json/named.roster_team_alltime.bam?start_season=${selectedStartSeason}&end_season=${selectedEndSeason}&team_id=${selectedTeam}`;
+      const url = `https://lookup-service-prod.mlb.com/json/named.roster_team_alltime.bam?start_season=${selectedStartSeason}&end_season=${selectedEndSeason}&team_id=${selectedTeam}`;
       const response = await fetch(url);
       const result = await response.json();
       const details = result?.roster_team_alltime?.queryResults?.row || [];
