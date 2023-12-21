@@ -26,26 +26,34 @@ const PlayerStats = ({ id, position }) => {
   }
 
   return (
-    <div>
-      {position === "P" ? (
-        <>
-          <p>Wins: {playerStats?.w}</p>
-          <p>Losses: {playerStats?.l}</p>
-          <p>ERA: {playerStats?.era}</p>
-        </>
-      ) : (
-        <>
-          <p>Abs: {playerStats?.ab}</p>
-          <p>Hits: {playerStats?.h}</p>
-          <p>Avg: {playerStats?.avg}</p>
-          <p>HR: {playerStats?.hr}</p>
-          <p>R: {playerStats?.r}</p>
-          <p>RBI: {playerStats?.rbi}</p>
-        </>
-      )}
+    <div className='flex flex-col items-center justify-center "bg-blue-900"'>
+      <div className="bg-red-700">
+        <h1 className="text-6xl mb-4">Career Stats: </h1>
+        {position === "P" ? (
+          <>
+            <p>Wins: {playerStats?.w}</p>
+            <p>Losses: {playerStats?.l}</p>
+            <p>ERA: {playerStats?.era}</p>
+            <p>Innings Pitched: {playerStats?.ip}</p>
+            <p>Strikeouts: {playerStats?.so}</p>
+            <p>Walks: {playerStats?.bb}</p>
+            <p>Hits Allowed: {playerStats?.h}</p>
+          </>
+        ) : (
+          <>
+            <p>Abs: {playerStats?.ab}</p>
+            <p>Hits: {playerStats?.h}</p>
+            <p>Avg: {playerStats?.avg}</p>
+            <p>HR: {playerStats?.hr}</p>
+            <p>R: {playerStats?.r}</p>
+            <p>RBI: {playerStats?.rbi}</p>
+            <p>Stolen Bases: {playerStats?.sb}</p>
+          </>
+        )}
+      </div>
     </div>
   );
-};
+        }
 
 export default PlayerStats;
 
