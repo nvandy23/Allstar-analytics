@@ -4,8 +4,8 @@ const PlayerStats = ({ id, position }) => {
   const [playerStats, setPlayerStats] = useState(null);
 
   const getPlayerStats = async () => {
-    const urlHitting = `http://lookup-service-prod.mlb.com/json/named.sport_career_hitting.bam?league_list_id='mlb'&game_type='R'&player_id=${id}`;
-    const urlPitching = `http://lookup-service-prod.mlb.com/json/named.sport_career_pitching.bam?league_list_id='mlb'&game_type='R'&player_id=${id}`;
+    const urlHitting = `https://lookup-service-prod.mlb.com/json/named.sport_career_hitting.bam?league_list_id='mlb'&game_type='R'&player_id=${id}`;
+    const urlPitching = `https://lookup-service-prod.mlb.com/json/named.sport_career_pitching.bam?league_list_id='mlb'&game_type='R'&player_id=${id}`;
 
     try {
       const response = await fetch(position === "P" ? urlPitching : urlHitting);

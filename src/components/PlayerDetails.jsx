@@ -6,7 +6,7 @@ const PlayerDetails = () => {
   const [playerDetails, setPlayerDetails] = useState(null);
 
   const getPlayerDetails = async () => {
-    const url = `http://lookup-service-prod.mlb.com/json/named.player_info.bam?sport_code='mlb'&player_id=${id}`;
+    const url = `https://lookup-service-prod.mlb.com/json/named.player_info.bam?sport_code='mlb'&player_id=${id}`;
 
     try {
       const response = await fetch(url);
