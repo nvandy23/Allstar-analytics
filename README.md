@@ -7,7 +7,8 @@
 
 # Screenshots:
 
-![Screenshot 1](https://mail.google.com/mail/u/1?ui=2&ik=66c7310344&attid=0.1.1&permmsgid=msg-f:1785987755696631817&th=18c91a66b77eb009&view=fimg&fur=ip&sz=s0-l75-ft&attbid=ANGjdJ-aJPJRj8-a3vKdxJOf5xUuXVwGOgmzS-293Rv8VyYifUpK1qFmMhLYkw4RlBfXXwG2ejiVbSr1hXoh5llEm9_82yyV29eHViJzKjgd0dz4CI4BzQinDYdIZc8&disp=emb)
+![Screenshot 1](assets/home_screen.jpg)
+
 
 
 ## Technologies used:
