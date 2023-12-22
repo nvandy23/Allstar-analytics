@@ -13,7 +13,7 @@ Welcome to Allstar Analytics, your ultimate destination for seamlessly accessing
 
 
 ## Acknowledgments:
-Mant thanks goes to Rapid API for the devlopment of this app. The robust capabilities of this API empowered me to access rosters for each season effortlessly, bringing to life an immersive experience for users to explore player details and career statistics. In my journey to create Allstar Analytics, I was faced with the exciting challenge of providing users with a comprehensive and dynamic platform. Rapid API emerged as my steadfast ally, offering unparalleled access to MLB data that forms the backbone of my application.
+Many thanks goes to Rapid API for the devlopment of this app. The robust capabilities of this API empowered me to access rosters for each season effortlessly, bringing to life an immersive experience for users to explore player details and career statistics. In my journey to create Allstar Analytics, I was faced with the exciting challenge of providing users with a comprehensive and dynamic platform. Rapid API emerged as my steadfast ally, offering unparalleled access to MLB data that forms the backbone of my application.
 
 ## Technologies used:
 - CSS
