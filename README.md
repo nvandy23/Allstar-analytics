@@ -11,8 +11,7 @@ Welcome to Allstar Analytics, your ultimate destination for seamlessly accessing
 
 ![Home page:](https://github.com/nvandy23/Allstar-analytics/assets/25328889/e5dd1dc2-afc6-46c8-bb76-8018543f5bbf)
 
-![player_search page:](https://github.com/nvandy23/Allstar-analytics/assets/25328889/e5dd1dc2-afc6-46c8-bb76-8018543f5bbf)
-
+![details page:](src/assets/player_details.jpg)
 
 
 
