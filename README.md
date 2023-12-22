@@ -8,7 +8,7 @@ Welcome to Allstar Analytics, your ultimate destination for seamlessly accessing
 
 # Screenshots:
 
-![Screenshot 1](./assets/home_screen.jpg)
+![Screenshot 1](.src/assets/home_screen.jpg)
 
 
 
