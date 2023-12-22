@@ -22,17 +22,18 @@ const PlayerStats = ({ id, position }) => {
   }, []); 
 
   if (!playerStats) {
-    document.body.classList.add('blue-background');
+    // document.body.classList.add('blue-background'); // Remove this line
     return (
-      <div className="flex items-center justify-center h-screen">
+      <div className="flex items-center justify-center h-screen bg-blue-900"> {/* Update this line */}
         <div className="text-7xl text-white">
           Loading...
         </div>
       </div>
     );
   }
+  
   return (
-    <div className='flex flex-col items-center justify-center "bg-blue-900"'>
+    <div className='flex flex-col items-center justify-center bg-blue-900'>
       <div className="bg-red-700">
         <h1 className="text-6xl mb-4">Career Stats: </h1>
         {position === "P" ? (
