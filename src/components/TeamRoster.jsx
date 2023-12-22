@@ -9,7 +9,7 @@ const TeamRoster = ({ teamRoster }) => {
             {p.name_last_first} - {p.primary_position}
           </div>
           <div>
-            <Link to={`/details/${p.player_id}/${p.primary_position}`} className="text-blue-500 hover:text-white">
+            <Link to={`/${p.player_id}/${p.primary_position}`} className="text-blue-500 hover:text-white">
               Player details
             </Link>
           </div>
