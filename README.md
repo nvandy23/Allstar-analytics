@@ -11,7 +11,7 @@
 
 
 
-Technologies used: 
+# Technologies used: 
 CSS
 Tailwind CSS
 Rapid API (MLB data)
@@ -22,7 +22,7 @@ App created by:
 Richard (Nick) Vanderipe
 
 
-Icebox features (for future implementation) :
+ # Icebox features (for future implementation) :
 
 Implement OAuth for user authentication, enabling users to log in. This feature allows users to create a personalized favorites list by marking their preferred players.
 Provide users with the ability to sort search results by player position and alphabetical order. This additional flexibility enhances the user experience in finding specific players.
