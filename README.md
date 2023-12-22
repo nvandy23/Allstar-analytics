@@ -7,13 +7,15 @@ Welcome to Allstar Analytics, your ultimate destination for seamlessly accessing
 - [My Trello board](https://trello.com/b/hxpv54sd/project-3-allstar-analytics-mlb)
  development
 
-# Screenshots:
+### Home Page:
+![Home page](path/to/home_screen.jpg)
 
-![Home page:](https://github.com/nvandy23/Allstar-analytics/assets/25328889/e5dd1dc2-afc6-46c8-bb76-8018543f5bbf)
+### Player Search Page:
+![Player search page](path/to/player_search.jpg)
 
-![player_search_page](src/assets/player_search.jpg)
+### Details Page:
+![Details page](path/to/player_details.jpg)
 
-![details page:](src/assets/player_details.jpg)
 
 
 
@@ -63,4 +65,4 @@ Richard (Nick) Vanderipe
 - Extend the player statistics display to include seasonal data, not just career averages. Present this information in a visually appealing table format to ensure a clean and organized user interface.
 - Optimize the design for mobile devices to ensure a seamless and user-friendly experience across various screen sizes. This responsiveness enhances accessibility and usability for users on the go.
 
- main
+ 
