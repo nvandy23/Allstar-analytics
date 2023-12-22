@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import TeamRoster from "./TeamRoster";
 import '../App.css';
 
@@ -9,7 +9,7 @@ const TeamDetails = () => {
   const [selectedEndSeason, setSelectedEndSeason] = useState("");
   const [teamId, setteamId] = useState("");
   const [teamList, setTeamList] = useState([]);
-  // const navigate = useNavigate();
+
 
   const fetchTeamList = async () => {
     try {
@@ -18,7 +18,6 @@ const TeamDetails = () => {
       const result = await response.json();
       const teams = result?.team_all_season?.queryResults?.row || [];
       setTeamList(teams);
-      console.log(teams);
     } catch (error) {
       console.error(error);
     }
@@ -31,8 +30,6 @@ const TeamDetails = () => {
       const result = await response.json();
       const details = result?.roster_team_alltime?.queryResults?.row || [];
       setTeamRoster(details);
-      console.log(details);
-      // navigate('/team')
     } catch (error) {
       console.error(error);
     }
@@ -62,8 +59,6 @@ const TeamDetails = () => {
     try {
       if (selectedTeam && selectedStartSeason && selectedEndSeason) {
         await fetchTeamDetails();
-        console.log(selectedTeam, selectedStartSeason, selectedEndSeason, teamId);
-        // navigate('/team')
       } else {
         alert("Please select a team and enter start and end seasons");
       }
@@ -159,10 +154,6 @@ const TeamDetails = () => {
             <div>
               <button className="border-4 border-red-500 hover:bg-red-500 mr-0" onClick={handleSubmit}>Submit</button> <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.wallpaperflare.com%2Fmajor-league-baseball-mlb-mlb-logo-sports-communication-wallpaper-cnfne&psig=AOvVaw3hVaiHJZyO9iz6uAK-Dtjy&ust=1703274211206000&source=images&cd=vfe&opi=89978449&ved=0CBQQjhxqFwoTCNDjhYeloYMDFQAAAAAdAAAAABAD" className ="pl-10 underline">Image Source </a>
             </div>
-           
-
-
-
           </div>
         </div>
       )}
