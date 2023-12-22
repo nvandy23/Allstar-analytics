@@ -1,4 +1,4 @@
-![image](https://github.com/nvandy23/Allstar-analytics/assets/25328889/f0ea4dde-2e88-42dd-9fd3-34b41431af41)# AllStar Analytics
+# AllStar Analytics
 
 ## Description:
 Welcome to Allstar Analytics, your ultimate destination for seamlessly accessing comprehensive details and career statistics of your favorite baseball players! Discover a vast array of features that elevate your baseball exploration journey. Easily navigate through player profiles, gaining insights into their playing positions, birthdates, college affiliations, and pro debut dates. Dive deep into the intricacies of their physical attributes, including height, weight, batting style, and throwing preferences!
@@ -10,6 +10,8 @@ Welcome to Allstar Analytics, your ultimate destination for seamlessly accessing
 # Screenshots:
 
 ![Home page:](https://github.com/nvandy23/Allstar-analytics/assets/25328889/e5dd1dc2-afc6-46c8-bb76-8018543f5bbf)
+
+![player_search_page](src/assets/player_search.jpg)
 
 ![details page:](src/assets/player_details.jpg)
 
