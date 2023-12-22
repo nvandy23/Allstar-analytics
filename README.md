@@ -8,13 +8,13 @@ Welcome to Allstar Analytics, your ultimate destination for seamlessly accessing
  development
 
 ### Home Page:
-![Home page](path/to/home_screen.jpg)
+![Home page](src/assets/home_screen.jpg)
 
 ### Player Search Page:
-![Player search page](path/to/player_search.jpg)
+![Player search page](src/assets/player_search.jpg)
 
 ### Details Page:
-![Details page](path/to/player_details.jpg)
+![Details page](src/assets/player_details.jpg)
 
 
 
