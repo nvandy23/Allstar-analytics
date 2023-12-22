@@ -114,7 +114,7 @@ const TeamDetails = () => {
               </label>
             </div>
             <div>
-              <button className="border-4 border-red-500 hover:bg-red-500 mr-0" onClick={handleSubmit}>Submit</button>
+              <button className="border-4 border-red-500 hover:bg-red-500 mr-0" onClick={handleSubmit}>Submit</button> <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.wallpaperflare.com%2Fmajor-league-baseball-mlb-mlb-logo-sports-communication-wallpaper-cnfne&psig=AOvVaw3hVaiHJZyO9iz6uAK-Dtjy&ust=1703274211206000&source=images&cd=vfe&opi=89978449&ved=0CBQQjhxqFwoTCNDjhYeloYMDFQAAAAAdAAAAABAD" className ="pl-10 underline">Image Source </a>
             </div>
           </div>
         </div>
@@ -157,8 +157,12 @@ const TeamDetails = () => {
               </label>
             </div>
             <div>
-              <button className="border-4 border-red-500 hover:bg-red-500 mr-0" onClick={handleSubmit}>Submit</button>
+              <button className="border-4 border-red-500 hover:bg-red-500 mr-0" onClick={handleSubmit}>Submit</button> <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.wallpaperflare.com%2Fmajor-league-baseball-mlb-mlb-logo-sports-communication-wallpaper-cnfne&psig=AOvVaw3hVaiHJZyO9iz6uAK-Dtjy&ust=1703274211206000&source=images&cd=vfe&opi=89978449&ved=0CBQQjhxqFwoTCNDjhYeloYMDFQAAAAAdAAAAABAD" className ="pl-10 underline">Image Source </a>
             </div>
+           
+
+
+
           </div>
         </div>
       )}
