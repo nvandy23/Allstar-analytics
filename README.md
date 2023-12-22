@@ -1,6 +1,7 @@
 # AllStar Analytics
 
 ## Description:
+Welcome to Allstar Analytics, your ultimate destination for seamlessly accessing comprehensive details and career statistics of your favorite baseball players! Discover a vast array of features that elevate your baseball exploration journey. Easily navigate through player profiles, gaining insights into their playing positions, birthdates, college affiliations, and pro debut dates. Dive deep into the intricacies of their physical attributes, including height, weight, batting style, and throwing preferences!
 
 - [My app](https://tiny-faun-82bd85.netlify.app/)
 - [My Trello board](https://trello.com/b/hxpv54sd/project-3-allstar-analytics-mlb)
