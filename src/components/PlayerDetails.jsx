@@ -14,7 +14,6 @@ const PlayerDetails = () => {
       const result = await response.json();
       const details = result?.player_info?.queryResults?.row || null;
       setPlayerDetails(details);
-      console.log(result);
     } catch (error) {
       console.error(error);
     }
@@ -35,16 +34,14 @@ const PlayerDetails = () => {
     );
   }
   
-  
-
   return (
-    <div className="h-screen "style={{ backgroundImage: `url(${MLB})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat:'no-repeat' }}
+    <div className="h-screen overflow-hidden"style={{ backgroundImage: `url(${MLB})`, backgroundSize: 'cover', overflow:'hidden', backgroundPosition: 'center', backgroundRepeat:'no-repeat' }}
     >
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col">
         <nav className="bg-blue-900 text-white text-center p-4 border-4 border-white">
           <h1 className="text-6xl">{playerDetails.name_display_first_last}</h1>
-          <h2>College: {playerDetails.college}</h2>
-          <p>Birthdate: {playerDetails.birth_date}</p>
+          <h2>College: {playerDetails.college ? playerDetails.college :"Did not attend college"}</h2>
+          <p>Birthdate: {playerDetails.birth_date.slice(0,10)}</p>
           <a href="/" className="underline">Home</a>
         </nav>
 
@@ -52,8 +49,8 @@ const PlayerDetails = () => {
           <div className="flex flex-col items-center justify-center p-4 bg-red-700 pr-4 border-4 border-white text-white">
             <h1 className="text-6xl mb-4">Details:</h1>
             <p>Position: {playerDetails.primary_position_txt}</p>
-            <p>Pro debut: {playerDetails.pro_debut_date}</p>
-            <p> Height: {playerDetails.height_feet} {playerDetails.height_inches}</p>
+            <p>Pro debut: {playerDetails.pro_debut_date.slice(0,10)}</p>
+            <p> Height: {playerDetails.height_feet}-{playerDetails.height_inches}</p>
             <p> Jersey Number: {playerDetails.jersey_number}</p>
             <p>Weight: {playerDetails.weight}</p>
             <p>Bats: {playerDetails.bats}</p>
@@ -68,7 +65,7 @@ const PlayerDetails = () => {
           </div>
         </div>
       </div>
-    </div>
+     </div>
   );
 };
 
