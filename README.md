@@ -5,7 +5,6 @@ Welcome to Allstar Analytics, your ultimate destination for seamlessly accessing
 
 - [My app](https://tiny-faun-82bd85.netlify.app/)
 - [My Trello board](https://trello.com/b/hxpv54sd/project-3-allstar-analytics-mlb)
- development
 
 ### Home Page:
 ![Home page](src/assets/home_screen.jpg)
