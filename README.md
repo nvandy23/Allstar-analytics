@@ -1,8 +1,11 @@
-# React + Vite
+# AllStar Anayltics
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Description:
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+[My app:](https://tiny-faun-82bd85.netlify.app/)
+
+[My trello board: ](https://trello.com/b/hxpv54sd/project-3-allstar-analytics-mlb)
+
+
