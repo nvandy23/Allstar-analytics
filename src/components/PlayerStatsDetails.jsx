@@ -22,9 +22,15 @@ const PlayerStats = ({ id, position }) => {
   }, []); 
 
   if (!playerStats) {
-    return <div>Loading...</div>;
+    document.body.classList.add('blue-background');
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <div className="text-7xl text-white">
+          Loading...
+        </div>
+      </div>
+    );
   }
-
   return (
     <div className='flex flex-col items-center justify-center "bg-blue-900"'>
       <div className="bg-red-700">
