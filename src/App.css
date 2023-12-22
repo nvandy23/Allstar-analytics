@@ -5,4 +5,15 @@
 
 body {
     font-family: 'Oleo Script', cursive;
-}
+    background-image: url('./assets/mlb.jpg'); 
+    color:white;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+    
+  .blue-background {
+    background-color: #1a365d;
+    background-image: none; 
+  }
