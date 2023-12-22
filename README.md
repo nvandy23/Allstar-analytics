@@ -8,7 +8,8 @@ Welcome to Allstar Analytics, your ultimate destination for seamlessly accessing
 
 # Screenshots:
 
-![Screenshot 1](https://nvandy23.github.io/Allstar-analytics/assets/screenshot1.jpg)
+![Screenshot 1](./assets/home_screen.jpg)
+
 
 
 
