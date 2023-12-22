@@ -74,7 +74,7 @@ const TeamDetails = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center ">
-      <h1 className="text-2xl font-bold mb-4">AllStar analytics</h1>
+      <h1 className="text-6xl font-bold mb-4">AllStar analytics</h1>
       {teamRoster? (
         <div className="flex flex-grow">
           <div className="grid grid-cols-4 gap-4 w-full bg-blue-900">
