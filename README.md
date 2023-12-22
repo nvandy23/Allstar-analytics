@@ -7,7 +7,9 @@
 
 # Screenshots:
 
-![Screenshot 1](src/assets/home_screen.jpg)
+![Screenshot 1](https://nvandy23.github.io/Allstar-analytics/assets/screenshot1.jpg)
+
+
 
 
 
