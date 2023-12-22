@@ -45,7 +45,7 @@ const PlayerDetails = () => {
           <h1 className="text-6xl">{playerDetails.name_display_first_last}</h1>
           <h2>College: {playerDetails.college}</h2>
           <p>Birthdate: {playerDetails.birth_date}</p>
-          <a href="/">Home</a>
+          <a href="/" className="underline">Home</a>
         </nav>
 
         <div className="my-56 mx-8 rounded-lg flex items-center justify-center bg-blue-900 border border-4 border-white">
